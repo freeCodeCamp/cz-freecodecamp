@@ -1,25 +1,22 @@
 {
-  "name": "cz-conventional-changelog",
+  "name": "cz-freecodecamp",
   "version": "0.0.0-semantically-released.0",
-  "description": "Commitizen adapter following the conventional-changelog format.",
+  "description": "Commitizen adapter for freeCodeCamp.",
   "main": "index.js",
   "scripts": {
     "commit": "git-cz",
     "test": "echo 'Tests need to be setup!'",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "homepage": "https://github.com/commitizen/cz-conventional-changelog",
+  "homepage": "https://github.com/freeCodeCamp/cz-freecodecamp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/commitizen/cz-conventional-changelog.git"
+    "url": "https://github.com/freeCodeCamp/cz-freecodecamp.git"
   },
-  "author": "Jim Cummins <jimthedev@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "conventional-commit-types": "^2.0.0",
-    "lodash.map": "^4.5.1",
+    "dedent": "^0.7.0",
     "longest": "^1.0.1",
-    "pad-right": "^0.2.2",
     "right-pad": "^1.0.1",
     "word-wrap": "^1.0.3"
   },
@@ -27,7 +24,9 @@
     "commitizen": "2.9.6",
     "semantic-release": "^6.3.2"
   },
-  "czConfig": {
-    "path": "./"
+  "config": {
+    "commitizen": {
+      "path": "./index.js"
+    }
   }
 }
