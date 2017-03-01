@@ -8,10 +8,10 @@
     "test": "echo 'Tests need to be setup!'",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "homepage": "https://github.com/freeCodeCamp/cz-freecodecamp",
+  "homepage": "https://github.com/freecodecamp/cz-freecodecamp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/freeCodeCamp/cz-freecodecamp.git"
+    "url": "https://github.com/freecodecamp/cz-freecodecamp.git"
   },
   "license": "MIT",
   "dependencies": {
