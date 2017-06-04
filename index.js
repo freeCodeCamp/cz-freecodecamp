@@ -5,7 +5,8 @@ const rightPad = require('right-pad');
 
 const types = require('./types.json');
 
-const maxLineWidth = 100;
+const maxLineWidth = 50;
+const bodyLineWidth = 72;
 const divider = '\n\n';
 const length = longest(Object.keys(types)).length + 1;
 // rightPad should be replaced with String::padEnd when available (node 8?)
@@ -21,7 +22,7 @@ module.exports = {
   prompter(cz, commit) {
     console.log(dedent`
       Line 1 will be cropped at ${maxLineWidth} characters.
-      All other lines will be wrapped after ${maxLineWidth} characters.
+      All other lines will be wrapped after ${bodyLineWidth} characters.
     `);
 
     // Let's ask some questions of the user
@@ -75,17 +76,18 @@ module.exports = {
         trim: true,
         newline: '\n',
         indent: '',
-        width: maxLineWidth
+        width: bodyLineWidth
       };
 
       // parentheses are only needed when a scope is present
       let scope = answers.scope.trim();
       scope = scope ? '(' + answers.scope.trim() + ')' : '';
+
       // Hard limit this subject line
       const subject = answers.subject.trim().slice(0, maxLineWidth);
       const head = `${answers.type}${scope}: ${subject}`;
 
-      // Wrap these lines at 100 characters
+      // Wrap these lines at 72 characters
       const body = wrap(answers.body, wrapOptions);
 
       // Apply breaking change prefix, removing it if already present
