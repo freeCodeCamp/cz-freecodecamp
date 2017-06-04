@@ -84,7 +84,8 @@ module.exports = {
       scope = scope ? '(' + answers.scope.trim() + ')' : '';
 
       // Hard limit this subject line
-      const subject = answers.subject.trim().slice(0, maxLineWidth);
+      const title = answers.subject.trim().slice(0, maxLineWidth);
+      const subject = title.charAt(0).toUpperCase() + title.substr(1);
       const head = `${answers.type}${scope}: ${subject}`;
 
       // Wrap these lines at 72 characters
