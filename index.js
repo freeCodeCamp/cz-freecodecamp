@@ -51,7 +51,12 @@ module.exports = {
         name: 'subject',
         message: dedent`
           Write a short, imperative tense description of the change:
-        `
+        `,
+        filter: function(input) {
+          return new Promise((resolve, reject) => {
+            resolve(input.replace(/\.*$/, ""));
+          });
+        }
       }, {
         type: 'input',
         name: 'body',
