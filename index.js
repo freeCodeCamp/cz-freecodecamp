@@ -50,7 +50,7 @@ module.exports = {
         type: 'input',
         name: 'subject',
         message: dedent`
-          Write a short, imperative tense description of the change:
+          Write a short, imperative tense description of the change\n  E.g. Change loop challenge format:
         `,
         filter: function(input) {
           return new Promise((resolve, reject) => {
