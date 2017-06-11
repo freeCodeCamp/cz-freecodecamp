@@ -61,7 +61,7 @@ module.exports = {
         type: 'input',
         name: 'body',
         message: dedent`
-          Provide a longer description of the change:
+          Give description of what changed and/or why:
         `
       }, {
         type: 'input',
