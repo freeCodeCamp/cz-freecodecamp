@@ -51,12 +51,17 @@ module.exports = {
         name: 'subject',
         message: dedent`
           Write a short, imperative tense description of the change\n  E.g. Change loop challenge format:
-        `
+        `,
+        filter: function(input) {
+          return new Promise((resolve, reject) => {
+            resolve(input.replace(/\.*$/, ""));
+          });
+        }
       }, {
         type: 'input',
         name: 'body',
         message: dedent`
-          Provide a longer description of the change (optional):
+          Give description of what changed and/or why:
         `
       }, {
         type: 'input',
