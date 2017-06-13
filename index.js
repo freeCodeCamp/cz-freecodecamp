@@ -50,8 +50,12 @@ module.exports = {
         type: 'input',
         name: 'subject',
         message: dedent`
-          Write a short, imperative tense description of the change\n  E.g. Change loop challenge format:
+          Write a short, imperative tense description of the change (no issue numbers)\n  E.g. Change loop challenge format:
         `,
+        validate: function(input) {
+          const noIssueNumbers = /#?\d+/g;
+          return !noIssueNumbers.test(input);
+        },
         filter: function(input) {
           return new Promise((resolve, reject) => {
             resolve(input.replace(/\.*$/, ""));
