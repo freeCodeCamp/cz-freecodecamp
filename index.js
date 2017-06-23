@@ -65,7 +65,7 @@ module.exports = {
         type: 'input',
         name: 'body',
         message: dedent`
-          Give description of what changed and/or why:
+          Give description of what changed and/or why (optional):
         `
       }, {
         type: 'input',
@@ -77,7 +77,7 @@ module.exports = {
         type: 'input',
         name: 'issues',
         message: dedent`
-          List any issues closed by this change:
+          List any issue(s) closed by this change (e.g. 123, 124):
         `
       }
     ]).then(answers => {
@@ -100,6 +100,15 @@ module.exports = {
       // Wrap these lines at 72 characters
       const body = wrap(answers.body, wrapOptions);
 
+      // Auto-add closing keyword to commit message body
+      const issueNums = answers.issues.match(/(\d+)/g);
+      const issues = issueNums == null ?
+            null :
+            issueNums.map(function(x) { return "Closes #" + x; })
+                     .reduce(function(acc, val) {
+                         return acc + "\n" + val;
+                     }, "");
+
       // Apply breaking change prefix, removing it if already present
       let breaking = answers.breaking.trim();
       breaking = breaking ?
@@ -107,8 +116,6 @@ module.exports = {
         '';
 
       breaking = wrap(breaking, wrapOptions);
-
-      const issues = wrap(answers.issues, wrapOptions);
 
       // if no breaking or issues filter them out
       const footer = [ breaking, issues ].filter(Boolean).join(divider);
