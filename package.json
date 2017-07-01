@@ -1,12 +1,11 @@
 {
   "name": "cz-freecodecamp",
-  "version": "0.0.0-semantically-released.0",
+  "version": "0.0.1",
   "description": "Commitizen adapter for freeCodeCamp.",
   "main": "index.js",
   "scripts": {
     "commit": "git-cz",
-    "test": "echo 'Tests need to be setup!'",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "test": "echo 'Tests need to be setup!'"
   },
   "homepage": "https://github.com/freecodecamp/cz-freecodecamp",
   "repository": {
@@ -21,8 +20,7 @@
     "word-wrap": "^1.0.3"
   },
   "devDependencies": {
-    "commitizen": "2.9.6",
-    "semantic-release": "^6.3.2"
+    "commitizen": "2.9.6"
   },
   "config": {
     "commitizen": {
