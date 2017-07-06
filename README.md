@@ -11,7 +11,7 @@ freeCodeCamp
 **Table of Contents**
 
 - [Introduction](#introduction)
-- [Local Installation](#local-installation)
+- [Installation](#installation)
 - [Usage](#usage)
 
 # Introduction
@@ -20,24 +20,25 @@ This Commitizen adapter helps standardize commit messages for freeCodeCamp so
 being asked to fix incorrectly formatted commit messages will be less of a
 problem.
 
-# Local Installation
+# Installation
+
+Install as a global adapter for freeCodeCamp repos
 
 ```shell
-# Install general tool globally
-npm install -g commitizen
+# Install the commitizen cli globally
+npm install --global commitizen
 
-# Install freeCodeCamp specific adapter
-git clone https://github.com/freeCodeCamp/cz-freecodecamp.git
+# Install the freeCodeCamp commitizen adapter globally
+npm install --global cz-freecodecamp
 
-# Add freeCodeCamp plugin to be used
-cd cz-freecodecamp
-echo '{ "path": "'$(pwd)'" }' > ~/.czrc
+# Save the adapter into global config
+echo '{ "path": "cz-freecodecamp" }' > ~/.czrc
 
-# Install node modules for adapter
-npm install
 ```
 
 # Usage
+
+Usage on freeCodeCamp's repos
 
 ```shell
 ... # Make changes
@@ -45,6 +46,13 @@ npm install
 # Stage changes
 git add changed-file
 
-# Use git cz instead of git commit
+# This adapter is bundled in the freeCodeCamp main repo as a dependancy.
+# Either use the inbuilt script
+npm run commit
+
+# Or alternatively on any of freeCodeCamp's repos including the main repo,
+# use git cz instead of git commit
 git cz
 ```
+
+Note: Please check the [contribuiting guidelines](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/CONTRIBUTING.md#method-1-editing-via-your-local-fork-recommended) on the main repo for more on usage.
