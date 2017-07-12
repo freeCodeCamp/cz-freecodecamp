@@ -55,4 +55,4 @@ npm run commit
 git cz
 ```
 
-Note: Please check the [contribuiting guidelines](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/CONTRIBUTING.md#method-1-editing-via-your-local-fork-recommended) on the main repo for more on usage.
+Note: Please check the [contributing guidelines](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/CONTRIBUTING.md#method-1-editing-via-your-local-fork-recommended) on the main repo for more on usage.
