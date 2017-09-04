@@ -53,7 +53,7 @@ module.exports = {
           Write a short, imperative tense description of the change (no issue numbers)\n  E.g. Change loop challenge format:
         `,
         validate: function(input) {
-          const noIssueNumbers = /#?\d+/g;
+          const noIssueNumbers = /\s#?\d+\s?/g;
           return !noIssueNumbers.test(input);
         },
         filter: function(input) {
