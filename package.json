@@ -1,6 +1,6 @@
 {
   "name": "cz-freecodecamp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Commitizen adapter for freeCodeCamp.",
   "main": "index.js",
   "scripts": {
