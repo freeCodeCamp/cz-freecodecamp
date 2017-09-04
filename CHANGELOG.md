@@ -1,3 +1,13 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/freecodecamp/cz-freecodecamp/compare/v1.0.0...v1.0.1) (2017-09-04)
+
+
+### Bug Fixes
+
+* **index:** Prevent stand-alone numbers in title ([a3f0f70](https://github.com/freecodecamp/cz-freecodecamp/commit/a3f0f70)), closes [#18](https://github.com/freecodecamp/cz-freecodecamp/issues/18)
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2017-07-01)
 
